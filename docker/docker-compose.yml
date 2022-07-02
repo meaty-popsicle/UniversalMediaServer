@@ -1,0 +1,12 @@
+services:
+  ums:
+    image: universalmediaserver/ums:latest
+    container_name: ums
+    ports:
+      - 9001:9001
+      - 5002:5002
+      - 1044:1044
+    volumes:
+      - media:/media
+      - profile:/profile
+    restart: unless-stopped
