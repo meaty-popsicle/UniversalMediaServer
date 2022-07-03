@@ -7,6 +7,13 @@ services:
       - 5002:5002
       - 1044:1044
     volumes:
-      - media:/media
-      - profile:/profile
+      - /storage/media/qbit:/usr/src/ums/media
+# Uncomment block below to enable GPU passtrough to container
+#     deploy:
+#       resources:
+#         reservations:
+#           devices:
+#             - driver: nvidia
+#               count: 1
+#               capabilities: [gpu]
     restart: unless-stopped
